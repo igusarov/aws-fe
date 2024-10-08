@@ -1,3 +1,13 @@
+# Task 2.1 Manual deployment
+
+- CloudFront url: https://d2exfazlx0h122.cloudfront.net
+- S3 url: http://igusarov-frontend.s3-website-us-east-1.amazonaws.com
+
+# Task 2.2 Automated Deployment
+- CloudFront url: d1lm2ao6n9pcbu.cloudfront.net
+MR:
+
+
 # React-shop-cloudfront
 
 This is frontend starter project for nodejs-aws mentoring program. It uses the following technologies:

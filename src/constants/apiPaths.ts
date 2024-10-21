@@ -9,7 +9,7 @@ const dev = {
 const prod = {
   product: "https://4gqsh9pob6.execute-api.us-east-1.amazonaws.com/prod",
   order: "https://4gqsh9pob6.execute-api.us-east-1.amazonaws.com/prod",
-  import: "https://4gqsh9pob6.execute-api.us-east-1.amazonaws.com/prod",
+  import: "https://gvgpzvmo1j.execute-api.us-east-1.amazonaws.com/prod",
   bff: "https://4gqsh9pob6.execute-api.us-east-1.amazonaws.com/prod",
   cart: "https://4gqsh9pob6.execute-api.us-east-1.amazonaws.com/prod",
 }

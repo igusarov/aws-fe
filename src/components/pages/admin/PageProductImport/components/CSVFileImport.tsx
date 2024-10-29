@@ -2,6 +2,7 @@ import React from "react";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import axios from "axios";
+import { useNotification } from "~/common/notification/NotificationContext";
 
 type CSVFileImportProps = {
   url: string;
@@ -10,6 +11,8 @@ type CSVFileImportProps = {
 
 export default function CSVFileImport({ url, title }: CSVFileImportProps) {
   const [file, setFile] = React.useState<File>();
+
+  const { showNotification } = useNotification();
 
   const onFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
@@ -23,6 +26,14 @@ export default function CSVFileImport({ url, title }: CSVFileImportProps) {
     setFile(undefined);
   };
 
+  const handleUploadFile = async () => {
+    try {
+      await uploadFile();
+    } catch (error) {
+      showNotification((error as unknown as any).message, 'error');
+    }
+  }
+
   const uploadFile = async () => {
     if (!file) {
       return;
@@ -32,6 +43,9 @@ export default function CSVFileImport({ url, title }: CSVFileImportProps) {
 
     // Get the presigned URL
     const response = await axios({
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("authorization_token")}`,
+      },
       method: "GET",
       url,
       params: {
@@ -57,7 +71,7 @@ export default function CSVFileImport({ url, title }: CSVFileImportProps) {
       ) : (
         <div>
           <button onClick={removeFile}>Remove file</button>
-          <button onClick={uploadFile}>Upload file</button>
+          <button onClick={handleUploadFile}>Upload file</button>
         </div>
       )}
     </Box>

@@ -58,4 +58,7 @@ export const handlers = [
   rest.put(`${API_PATHS.order}/order/:id/status`, (req, res, ctx) => {
     return res(ctx.status(200));
   }),
+  rest.get(`${API_PATHS.import}/import`, (req, res, ctx) => {
+    return res(ctx.status(401));
+  }),
 ];

@@ -11,7 +11,7 @@ const prod = {
   order: "https://4gqsh9pob6.execute-api.us-east-1.amazonaws.com/prod",
   import: "https://gvgpzvmo1j.execute-api.us-east-1.amazonaws.com/prod",
   bff: "https://4gqsh9pob6.execute-api.us-east-1.amazonaws.com/prod",
-  cart: "https://4gqsh9pob6.execute-api.us-east-1.amazonaws.com/prod",
+  cart: "https://670wje56jd.execute-api.us-east-1.amazonaws.com/prod",
 }
 
 const API_PATHS = import.meta.env.MODE === 'production' ? prod : dev;
